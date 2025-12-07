@@ -40,8 +40,8 @@ function Register(){
                 "contactNumber" : contactNumber,
                 "email" : email,
                 "password"  : password
-            };                
-            await fetch("http://localhost:5000/register", {
+            };              
+            await fetch("https://userloginbackend-eosin.vercel.app/register", {
                 method: "POST",
                 headers: {
                 'Content-Type': 'application/json'
