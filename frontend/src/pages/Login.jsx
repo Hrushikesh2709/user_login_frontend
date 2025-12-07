@@ -12,8 +12,8 @@ function Login(){
         
         if(email && password){
             let obj = {
-                "email" : email,
-                "password"  : password
+                "email" : email.trim(),
+                "password"  : password.trim()
             };
                 
             await fetch("https://userloginbackend-eosin.vercel.app/login", {
