@@ -35,11 +35,11 @@ function Register(){
         if(firstName && lastName && contactNumber && email && password){
             console.log("All fields are available");
             let obj = {
-                "firstName" : firstName,
-                "lastName"  : lastName,
-                "contactNumber" : contactNumber,
-                "email" : email,
-                "password"  : password
+                "firstName" : firstName.trim(),
+                "lastName"  : lastName.trim(),
+                "contactNumber" : contactNumber.trim(),
+                "email" : email.trim(),
+                "password"  : password.trim()
             };              
             await fetch("https://userloginbackend-eosin.vercel.app/register", {
                 method: "POST",
