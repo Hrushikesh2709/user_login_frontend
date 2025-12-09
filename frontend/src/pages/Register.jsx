@@ -41,7 +41,7 @@ function Register(){
                 "email" : email.trim(),
                 "password"  : password.trim()
             };              
-            await fetch("https://userloginbackend-production.up.railway.app/register", {
+            await fetch("userloginbackend-eosin.vercel.app/register", {
                 method: "POST",
                 headers: {
                 'Content-Type': 'application/json'
