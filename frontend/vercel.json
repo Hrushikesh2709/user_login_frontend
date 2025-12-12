@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/:path*",
-      "destination": "/:path*"
+      "destination": "https://userloginbackend-eosin.vercel.app/:path*"
     }
   ]
 }
