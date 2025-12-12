@@ -15,21 +15,18 @@ function Login(){
                 "email" : email.trim(),
                 "password"  : password.trim()
             };
-                
-            await fetch("userloginbackend-eosin.vercel.app/login", {
-                method: "POST",
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body:   JSON.stringify(obj)
+            await axios({
+                method: 'post',
+                url: 'https://userloginbackend-eosin.vercel.app/login',
+                data: JSON.stringify(obj),
+                headers: { 'content-type': 'application/json' },
             })
-            .then(result=>result.json())
             .then(response=>{
-                if(response.result=="success"){ 
+                if(response.data.result=="success"){ 
                     alert("Login Successful !");
                     setTimeout(()=>{
                         navigate("/",{
-                            state: { user: response ?. user || "" }
+                            state: { user: response.data ?. user || "" }
                         });
                     }, 2500);
                 } else {
