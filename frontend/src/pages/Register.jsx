@@ -42,7 +42,7 @@ function Register(){
             };
             await axios({
                 method: 'post',
-                url: 'https://userloginbackend-eosin.vercel.app/register',
+                url: '/register',
                 data: JSON.stringify(obj),
                 headers: { 'content-type': 'application/json' },
             })
