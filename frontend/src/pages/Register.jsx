@@ -41,7 +41,7 @@ function Register(){
                 "email" : email.trim(),
                 "password"  : password.trim()
             };              
-            await fetch("userloginbackend-eosin.vercel.app/register", {
+            await fetch("https://userloginbackend-eosin.vercel.app/register", {
                 method: "POST",
                 headers: {
                 'Content-Type': 'application/json'
