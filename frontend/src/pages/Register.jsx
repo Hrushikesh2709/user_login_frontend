@@ -41,8 +41,8 @@ function Register(){
                 "password"  : password.trim()
             };
             await axios({
-                method: 'post',
-                url: '/register',
+                method: 'POST',
+                url: "https://userloginbackend-eosin.vercel.app/register",
                 data: JSON.stringify(obj),
                 headers: { 'content-type': 'application/json' },
             })
