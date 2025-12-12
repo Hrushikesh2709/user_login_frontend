@@ -16,8 +16,8 @@ function Login(){
                 "password"  : password.trim()
             };
             await axios({
-                method: 'post',
-                url: '/login',
+                method: 'POST',
+                url: "https://userloginbackend-eosin.vercel.app/login",
                 data: JSON.stringify(obj),
                 headers: { 'content-type': 'application/json' },
             })
