@@ -33,24 +33,21 @@ function Register(){
     const handleClick = async (e) =>{
         e.preventDefault();
         if(firstName && lastName && contactNumber && email && password){
-            console.log("All fields are available");
             let obj = {
                 "firstName" : firstName.trim(),
                 "lastName"  : lastName.trim(),
                 "contactNumber" : contactNumber.trim(),
                 "email" : email.trim(),
                 "password"  : password.trim()
-            };              
-            await fetch("https://userloginbackend-eosin.vercel.app/register", {
-                method: "POST",
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body:   JSON.stringify(obj)
+            };
+            await axios({
+                method: 'post',
+                url: 'https://userloginbackend-eosin.vercel.app/register',
+                data: JSON.stringify(obj),
+                headers: { 'content-type': 'application/json' },
             })
-            .then(result=>result.json())
             .then(response=>{
-                if(response == "true"){
+                if(response.data == "true"){
                     alert("User Registered !");
                     setTimeout(()=>{
                         navigation("/login");
